@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import {books} from './books'
-import BookContainer from './components/BookContainer'
+import { Card, Icon, Image } from 'semantic-ui-react'
 import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom';
+import { InstantSearch, SearchBox, Hits, Pagination, Configure } from 'react-instantsearch-dom';
+import PropTypes from 'prop-types';
 
 const ALG_APP = process.env.REACT_APP_ALG_APP
 const SEARCH_KEY = process.env.REACT_APP_SEARCH_KEY
@@ -12,23 +12,46 @@ const searchClient = algoliasearch(ALG_APP, SEARCH_KEY);
 
 class App extends Component {
   
-  state = {
-    books: books
-  }
-  
   render() {
 
     return (
       <div className="App">
-       <h1>Tez's Library</h1>
-        <InstantSearch searchClient={searchClient} indexName="demo_books">
-          <SearchBox />
-          <Hits />
-        </InstantSearch>
-       <BookContainer books={this.state.books}/>
+        <h1>Tez's Library</h1>
+        <div className=".container">
+          <InstantSearch searchClient={searchClient} indexName="demo_books">
+          <div className="search">
+            <SearchBox
+              translations={{ placeholder: "Search for products" }}
+            />
+             <Hits hitComponent={Hit}/>
+          </div>
+          </InstantSearch>
+        </div>
       </div>
     );
   }
+}
+
+function Hit(props) {
+    
+    const { hit } = props
+  
+    return (
+    <Card>
+      <Image src={hit.image} />
+      <Card.Content>
+        <Card.Header>{hit.title}</Card.Header>
+      </Card.Content>
+      <Card.Content extra>
+        <Icon name='user' />
+        {hit.author}
+      </Card.Content>
+    </Card>
+  )
+}
+
+Hit.propTypes = {
+  hit: PropTypes.object.isRequired
 }
 
 export default App;
