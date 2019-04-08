@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { Card, Icon, Image } from 'semantic-ui-react'
 import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch, SearchBox, Hits, Pagination, Configure } from 'react-instantsearch-dom';
+import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom';
 import PropTypes from 'prop-types';
 
 const ALG_APP = process.env.REACT_APP_ALG_APP
@@ -19,12 +19,10 @@ class App extends Component {
         <h1>Tez's Library</h1>
         <div className=".container">
           <InstantSearch searchClient={searchClient} indexName="demo_books">
-          <div className="search">
             <SearchBox
               translations={{ placeholder: "Search for products" }}
             />
              <Hits hitComponent={Hit}/>
-          </div>
           </InstantSearch>
         </div>
       </div>

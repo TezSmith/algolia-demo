@@ -12,11 +12,16 @@
 .ais-Hits-list {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
   
 }
 
+.ais-Hits-item {
+  padding: 10px;
+}
+
 .ui.image {
-  max-height: 375px;
+  max-height: 400px;
 }
 
 li {
