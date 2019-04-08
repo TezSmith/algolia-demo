@@ -9,6 +9,30 @@
   
 }
 
+input.ais-SearchBox-input {
+  height: 50px;
+  width: 500px;
+  border-radius: 5px;
+  padding-left: 5px;
+}
+
+.ais-SearchBox-input::placeholder {
+  padding-left: 5px;
+}
+
+/* .ais-SearchBox-input {
+  padding-left: 5px;
+} */
+
+.ais-SearchBox-submit {
+ display: none;
+}
+
+.ais-SearchBox-reset {
+ display: none;
+}
+
+
 .ais-Hits-list {
   display: flex;
   flex-flow: row wrap;

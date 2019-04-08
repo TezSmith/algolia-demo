@@ -20,7 +20,7 @@ class App extends Component {
         <div className=".container">
           <InstantSearch searchClient={searchClient} indexName="demo_books">
             <SearchBox
-              translations={{ placeholder: "Search for products" }}
+              translations={{ placeholder: "Search for books" }}
             />
              <Hits hitComponent={Hit}/>
           </InstantSearch>
