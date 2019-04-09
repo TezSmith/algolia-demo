@@ -8,6 +8,7 @@ ul {
 
 li {
   list-style-type: none;
+  padding-bottom: 1em;
 }
 
 .navbar {
@@ -34,6 +35,15 @@ li {
   float: left;
   padding-left: 10px;
   width: 250px;
+}
+
+.ais-RefinementList-labelText {
+  padding-left: 5px;
+}
+
+.ais-RefinementList-count {
+  background-color: #efefef;
+  padding: 0px 4px 0px 4px;
 }
 
 button {
