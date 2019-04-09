@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { Card, Icon, Image } from 'semantic-ui-react'
 import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom';
+import { InstantSearch, SearchBox, Hits, RefinementList, ClearRefinements } from 'react-instantsearch-dom';
 import PropTypes from 'prop-types';
 
 const ALG_APP = process.env.REACT_APP_ALG_APP
@@ -16,13 +16,23 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1>Tez's Library</h1>
-        <div className=".container">
+        <div className="navbar">
+          <h1>Bookish - Algolia Demo</h1>
+        </div>
+        <div className="container">
           <InstantSearch searchClient={searchClient} indexName="demo_books">
-            <SearchBox
-              translations={{ placeholder: "Search for books" }}
-            />
-             <Hits hitComponent={Hit}/>
+              <div className="sidebar">
+               <ClearRefinements clearsQuery="true"/>
+               <h2>Genres</h2>
+               <RefinementList attribute="genre" />
+              </div>
+              <div className="main">
+               <SearchBox
+                translations={{ placeholder: "Search for books" }}
+               />
+               <Hits hitComponent={Hit}/>
+              </div>
+        
           </InstantSearch>
         </div>
       </div>
@@ -38,11 +48,11 @@ function Hit(props) {
     <Card>
       <Image src={hit.image} />
       <Card.Content>
-        <Card.Header>{hit.title}</Card.Header>
+        <Card.Header>${hit.price}</Card.Header>
       </Card.Content>
       <Card.Content extra>
         <Icon name='user' />
-        {hit.author}
+          {hit.author}
       </Card.Content>
     </Card>
   )
