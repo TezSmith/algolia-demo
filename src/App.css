@@ -2,10 +2,6 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: #efefef;
-}
-
 ul {
   padding-inline-start: 0px;
 }
@@ -13,14 +9,6 @@ ul {
 li {
   list-style-type: none;
   padding-bottom: 1em;
-}
-
-a {
-  color: #CCE6F4;
-}
-
-.app {
-  height: 100%;
 }
 
 .navbar {
@@ -62,8 +50,9 @@ a {
 
 button {
   height: 50px;
-  color: #333;
+  color: #1E70BF;
   border-radius: 5px;
+  background-color: #fff;
 }
 
 input.ais-SearchBox-input {
@@ -103,6 +92,7 @@ input.ais-SearchBox-input {
 
 .ais-Pagination-item  {
   border: 2px solid #efefef;
+  background-color: #fff;
   border-radius: 3px;
   margin: 0px 2px;
   padding: 1px 5px;
@@ -121,5 +111,9 @@ input.ais-SearchBox-input {
 .footer > p {
   padding-top: 15px;
   text-align: center;
+}
+
+.footer > a {
+  color: #1E70BF
 }
 
