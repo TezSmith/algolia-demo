@@ -6,7 +6,7 @@ Bookish is a sample library app that allows me to search through my favorite boo
 
 1. Fork and clone this respository, run npm install, and then npm start.
 2. Search for an author, book, title or genre!
-3. Filter results based on genre!
+3. Filter results based on genre and/or price!
 
 ## License
 Montez Smith. © 2019. All rights reserved.
