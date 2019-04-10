@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { Card, Icon, Image } from 'semantic-ui-react'
 import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch, SearchBox, Hits, RefinementList, ClearRefinements } from 'react-instantsearch-dom';
+import { InstantSearch, SearchBox, Hits, RefinementList, NumericMenu, Pagination, ClearRefinements } from 'react-instantsearch-dom';
 import PropTypes from 'prop-types';
 
 const ALG_APP = process.env.REACT_APP_ALG_APP
@@ -25,15 +25,45 @@ class App extends Component {
                <ClearRefinements clearsQuery="true"/>
                <h2>Genres</h2>
                <RefinementList attribute="genre" />
+               <h2>Price</h2>
+              <NumericMenu
+                attribute="price"
+                items={[
+                  { label: ' $5 - $10', start: 5, end: 10 },
+                  { label: ' $10 - $20', start: 10, end: 20 },
+                  { label: ' $20 or more', start: 20 },
+                ]}
+              />
               </div>
               <div className="main">
                <SearchBox
-                translations={{ placeholder: "Search for books" }}
+                translations={{ placeholder: "Search for books by author, title or genre" }}
                />
                <Hits hitComponent={Hit}/>
+              <Pagination
+                translations={{
+                  previous: '‹',
+                  next: '›',
+                  first: '«',
+                  last: '»',
+                  page(currentRefinement) {
+                    return currentRefinement;
+                  },
+                  ariaPrevious: 'Previous page',
+                  ariaNext: 'Next page',
+                  ariaFirst: 'First page',
+                  ariaLast: 'Last page',
+                  ariaPage(currentRefinement) {
+                    return `Page ${currentRefinement}`;
+                  },
+                }}
+              />
               </div>
-        
+              
           </InstantSearch>
+        </div>
+        <div className="footer">
+          <p>Demo by <a href="http://linkedin.com/in/montezsmith">Tez Smith</a></p>
         </div>
       </div>
     );

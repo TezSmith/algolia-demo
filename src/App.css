@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #efefef;
+}
+
 ul {
   padding-inline-start: 0px;
 }
@@ -11,16 +15,25 @@ li {
   padding-bottom: 1em;
 }
 
+a {
+  color: #CCE6F4;
+}
+
+.app {
+  height: 100%;
+}
+
 .navbar {
-  height: 100px;
-  background-color: aqua;
+  height: 75px;
+  background-color: #CCE6F4;
   margin-bottom: 10px;
 }
 
 .navbar > h1 {
   position: relative;
   left: 50px;
-  top: 25px;
+  top: 18px;
+  font-size: 26px;
 }
 
 .container  {
@@ -35,9 +48,10 @@ li {
   float: left;
   padding-left: 10px;
   width: 250px;
+  height: 100vh;
 }
 
-.ais-RefinementList-labelText {
+.ais-RefinementList-labelText, span.ais-NumericMenu-labelText{
   padding-left: 5px;
 }
 
@@ -81,7 +95,31 @@ input.ais-SearchBox-input {
   padding: 10px;
 }
 
+.ais-Pagination-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center; 
+}
+
+.ais-Pagination-item  {
+  border: 2px solid #efefef;
+  border-radius: 3px;
+  margin: 0px 2px;
+  padding: 1px 5px;
+}
+
 .ui.image {
   max-height: 400px;
+}
+
+.footer {
+  height: 50px;
+  margin-top: 10px;
+  border-top: 1px solid #efefef;
+}
+
+.footer > p {
+  padding-top: 15px;
+  text-align: center;
 }
 
