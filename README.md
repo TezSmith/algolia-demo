@@ -1,6 +1,6 @@
 ## About 
 
-Bookish is a sample library app that allows me to search through my favorite books with Algolia's Search API and Instant Search widget. Bookish is built on React and utilizes styling from Semantic UI. View the site: [Bookish](https://tez-algolia-demo.netlify.com)
+Bookish is a sample library app that allows me to search through my favorite books with Algolia's Search API and Instant Search widget. Bookish is built on React and utilizes styling from Semantic UI. View the site: [Bookish](https://bookish-algolia-demo.firebaseapp.com/)
 
 ## To Use
 
