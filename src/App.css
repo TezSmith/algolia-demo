@@ -75,9 +75,10 @@ input.ais-SearchBox-input {
 }
 
 .ais-Hits-list {
+  margin-top: 20px;
   display: flex;
   flex-flow: row wrap;
-  justify-content: center; 
+  justify-content: center;
 }
 
 .ais-Hits-item {
@@ -87,7 +88,7 @@ input.ais-SearchBox-input {
 .ais-Pagination-list {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center; 
+  justify-content: center;
 }
 
 .ais-Pagination-item  {
@@ -116,4 +117,3 @@ input.ais-SearchBox-input {
 .footer > a {
   color: #1E70BF
 }
-
